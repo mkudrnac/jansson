@@ -86,10 +86,10 @@ endif (WIN32)
 # set (JANSSON_VERSION "2.3.1")
 # set (JANSSON_SOVERSION 2)
 
-set(JANSSON_DISPLAY_VERSION "2.9")
+set(JANSSON_DISPLAY_VERSION "2.10")
 
 # This is what is required to match the same numbers as automake's
-set(JANSSON_VERSION "4.9.0")
+set(JANSSON_VERSION "4.10.0")
 set(JANSSON_SOVERSION 4)
 
 # for CheckFunctionKeywords
@@ -250,7 +250,7 @@ endif ()
 # detect what to use for the 64 bit type.
 # Note: I will prefer long long if I can get it, as that is what the automake system aimed for.
 if (NOT DEFINED JSON_INT_T)
-   if (HAVE_LONG_LONG_INT AND ((${LONG_LONG_INT}) EQUAL 8))
+   if (HAVE_LONG_LONG_INT AND (${LONG_LONG_INT} EQUAL 8))
       set (JSON_INT_T "long long")
    elseif (HAVE_INT64_T)
       set (JSON_INT_T int64_t)
